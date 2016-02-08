@@ -45,13 +45,17 @@ npm install serverless-plugin-cronjob
 ```
 
  - Parameters:
-   - name: (string) Name of your cronjob
-   - description: (string) Describtion for your cronjob
-   - schedule: (string) defines when the cronjob should run. two different types are useable:
-     a) rate(x time), where "x" is an integer number and time is any value of minutes, hours or days
-     b) cron(0 20 * * ? *), where the default crontab rules can be used
-   - enabled: (boolean) true or false, to enable or disable this cron
+
+```
+name            (string)  Name of your cronjob
+description     (string)  Describtion for your cronjob
+enabled         (boolean) true or false, to enable or disable this cron   
+schedule        (string)  defines when the cronjob should run. two different types are useable:
+    a) rate(x time)         "x" is an integer number
+                            "time" is a string value of "minutes", "hours" or "days"
+    b) cron(0 20 * * ? *)   default crontab rules can be used
+
+```
  
- - please check the docs for detailed descriptions 
- - https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/ScheduledEvents.html
+ - please check the docs for detailed descriptions https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/ScheduledEvents.html
 
