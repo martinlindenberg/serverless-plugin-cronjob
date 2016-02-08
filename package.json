@@ -1,0 +1,39 @@
+{
+  "name": "serverless-plugin-cronjob",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=4.0"
+  },
+  "description": "Serverless CronJob Plugin.",
+  "author": "https://github.com/martinlindenberg/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinlindenberg/serverless-plugin-cronjob.git"
+  },
+  "keywords": [
+    "serverless plugin cronjob",
+    "serverless framework plugin",
+    "serverless applications",
+    "serverless plugins",
+    "api gateway",
+    "lambda",
+    "cronjob",
+    "aws",
+    "aws lambda",
+    "amazon",
+    "amazon web services"
+  ],
+  "main": "index.js",
+  "bin": {},
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {
+    "aws-sdk": "^2.2.33",
+    "bluebird": "^3.0.6"
+  },
+  "bugs": {
+    "url": "https://github.com/martinlindenberg/serverless-plugin-cronjob/issues"
+  },
+  "homepage": "https://github.com/martinlindenberg/serverless-plugin-cronjob#readme"
+}
