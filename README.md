@@ -1,6 +1,8 @@
 Serverless Plugin CRONJOB
 =========================
 
+[![NPM](https://nodei.co/npm/serverless-plugin-cronjob.png?downloads=true)](https://nodei.co/npm/serverless-plugin-cronjob/)
+
 This plugin creates cronjobs out of your lambda functions.
 
 *Note*: This plugin supports Serverless 0.2.* and 0.3.*
