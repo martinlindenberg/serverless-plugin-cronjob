@@ -83,13 +83,29 @@ module.exports = function(SPlugin) {
 
                 _this.cloudWatchEvents.putRuleAsync(params)
                 .then(function(result){
+                    return _this.lambda.addPermissionAsync({
+                        FunctionName: _this._getFunctionArn(_this.cronJobSettings[i]),
+                        StatementId: Date.now().toString(),
+                        Action: 'lambda:InvokeFunction',
+                        Principal: 'events.amazonaws.com',
+                        Qualifier: _this.stage
+                    })
+                    .then(function(){
+                        console.log('permissions added');
+                    })
+                    .catch(function(e) {
+                        console.log('error during adding permission to Lambda');
+                        console.log(e);
+                    });
+                })
+                .then(function(result){
                     var _this = this;
 
                     return _this.cloudWatchEvents.putTargetsAsync({
                         Rule: _this.cronJobSettings[i].cronjob.name,
                         Targets: [
                             {
-                                Arn: _this._getFunctionArn(_this.cronJobSettings[i]),
+                                Arn: _this.cronJobSettings[i].deployed.Arn,
                                 Id: _this._getTargetId(_this.cronJobSettings[i])
                             }
                         ]
@@ -166,7 +182,14 @@ module.exports = function(SPlugin) {
                 secretAccessKey: this.S.config.awsAdminSecretKey
             });
 
+            _this.lambda = new AWS.Lambda({
+                region: region,
+                accessKeyId: this.S.config.awsAdminKeyId,
+                secretAccessKey: this.S.config.awsAdminSecretKey
+            });
+
             BbPromise.promisifyAll(_this.cloudWatchEvents);
+            _this.lambda.addPermissionAsync = BbPromise.promisify(_this.lambda.addPermission);
         }
 
 
