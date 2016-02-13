@@ -5,8 +5,8 @@ Serverless Plugin CRONJOB
 
 This plugin creates cronjobs out of your lambda functions.
 
-*Note*: This plugin supports Serverless 0.2.* and 0.3.*
-
+*Note*: This plugin supports Serverless 0.4.* 
+(please use previous Releases for 0.2.* and 0.3.*)
 
 ### Installation
 
