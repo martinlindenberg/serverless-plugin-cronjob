@@ -206,8 +206,8 @@ module.exports = function(SPlugin) {
             var settings = [];
             for (var deployedIndex in evt.data.deployed[region]) {
                 let deployed = evt.data.deployed[region][deployedIndex],
-                    settingsFile = _this.S.config.projectPath + '/' + deployed.component + '/' + deployed.module + '/' + deployed.function + '/s-function.json';
-
+                    settingsFile = _this.S.config.projectPath + '/' + deployed.sPath + '/s-function.json';
+                    
                 if (!fs.existsSync(settingsFile)) {
                     continue;
                 }
