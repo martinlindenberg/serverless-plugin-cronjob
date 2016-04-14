@@ -8,6 +8,11 @@ This plugin creates cronjobs out of your lambda functions.
 *Note*: This plugin supports Serverless 0.4.* 
 (please use previous Releases for 0.2.* and 0.3.*)
 
+In newer Versions of Serverless (0.5+) the functions of this plugin are already included:
+
+ - @see http://docs.serverless.com/docs/function-configuration
+ - (check the events attribute in the s-function.json file)
+
 ### Installation
 
  - make sure that aws and serverless are installed
